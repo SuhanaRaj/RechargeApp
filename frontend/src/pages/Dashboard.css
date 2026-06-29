@@ -3,7 +3,7 @@
   margin: 0 auto;
 }
 
-/* Welcome Banner */
+/* Welcome Banner
 .welcome-banner {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -30,12 +30,13 @@
   display: inline-block;
   background: rgba(255, 255, 255, 0.2);
   color: white;
-  padding: 12px 30px;
+  padding: 10px 25px;
   border-radius: 25px;
   text-decoration: none;
   transition: background 0.3s;
   font-weight: 500;
   backdrop-filter: blur(10px);
+
 }
 
 .quick-action-btn:hover {
@@ -49,8 +50,208 @@
 
 .quick-action-btn.primary:hover {
   background: #f0f0f0;
+} */
+
+/* ==================== WELCOME BANNER ==================== */
+/* ==================== WELCOME BANNER ==================== */
+.welcome-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px 45px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.35);
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+  gap: 40px;  /* ← ADDED: Creates space between text and button */
 }
 
+/* Decorative background elements */
+.welcome-banner::before {
+  content: '📱';
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.08;
+  right: -20px;
+  bottom: -30px;
+  transform: rotate(-10deg);
+}
+
+.welcome-banner::after {
+  content: '✨';
+  position: absolute;
+  font-size: 60px;
+  opacity: 0.1;
+  left: 20%;
+  top: -10px;
+}
+
+.welcome-text {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding-right: 10px;  /* ← ADDED: Extra space on the right of text */
+}
+
+.welcome-text h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.welcome-text h1 .wave {
+  display: inline-block;
+  animation: wave 2.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+.welcome-text p {
+  opacity: 0.9;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.welcome-text .sub-text {
+  display: block;
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 4px;
+  font-weight: 300;
+}
+
+/* Quick Action Button - Improved */
+.quick-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 16px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;  /* ← ADDED: Prevents button from shrinking */
+}
+
+.quick-action-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.quick-action-btn:active {
+  transform: translateY(0px);
+}
+
+.quick-action-btn .btn-icon {
+  font-size: 20px;
+}
+
+.quick-action-btn.primary {
+  background: white;
+  color: #667eea;
+  border-color: white;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.quick-action-btn.primary:hover {
+  background: #f8f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
+}
+
+.quick-action-btn.primary .btn-icon {
+  color: #667eea;
+}
+
+/* Responsive Welcome Banner */
+@media (max-width: 768px) {
+  .welcome-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 25px;
+    min-height: auto;
+    gap: 20px;  /* ← Less gap on mobile */
+    border-radius: 16px;
+  }
+
+  .welcome-banner::before {
+    font-size: 80px;
+    right: -10px;
+    bottom: -20px;
+  }
+
+  .welcome-banner::after {
+    font-size: 40px;
+    left: 10%;
+  }
+
+  .welcome-text {
+    padding-right: 0;  /* ← Remove padding on mobile */
+  }
+
+  .welcome-text h1 {
+    font-size: 26px;
+  }
+
+  .welcome-text p {
+    font-size: 15px;
+  }
+
+  .quick-action-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+    width: 100%;
+    justify-content: center;
+    flex-shrink: 1;  /* ← Allow button to shrink on mobile */
+  }
+
+  .quick-action-btn.primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-banner {
+    padding: 25px 20px;
+    border-radius: 14px;
+    gap: 15px;  /* ← Even less gap on small mobile */
+  }
+
+  .welcome-text h1 {
+    font-size: 22px;
+  }
+
+  .welcome-text p {
+    font-size: 14px;
+  }
+
+  .quick-action-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
 /* Stats Grid */
 .stats-grid {
   display: grid;

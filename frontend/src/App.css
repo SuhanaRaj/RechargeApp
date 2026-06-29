@@ -8,7 +8,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  background: #f5f7fa;
+  background: #31517d;
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,7 +31,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-  background: white;
+  background: rgb(234, 227, 227);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 15px 0;
   position: sticky;
